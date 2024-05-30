@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Bookmark Webhook Trigger",
+    "version": "1.0",
+    "description": "This Chrome extension triggers a webhook whenever a bookmark is created, updated, or deleted, providing detailed information about the bookmark.",
+    "permissions": [
+      "bookmarks",
+      "background",
+      "storage",
+      "notifications"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "options_page": "options.html",
+    "icons": {
+      "16": "assets/icon16.png",
+      "32": "assets/icon32.png",
+      "48": "assets/icon48.png",
+      "128": "assets/icon128.png"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "assets/icon16.png",
+        "32": "assets/icon32.png",
+        "48": "assets/icon48.png",
+        "128": "assets/icon128.png"
+      }
+    }
+  }
+  
