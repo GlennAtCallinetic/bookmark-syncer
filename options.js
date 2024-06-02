@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const triggerCreatedInput = document.getElementById('triggerCreated');
     const triggerUpdatedInput = document.getElementById('triggerUpdated');
     const triggerDeletedInput = document.getElementById('triggerDeleted');
+    const triggerMovedInput = document.getElementById('triggerMoved');
     const saveBtn = document.getElementById('saveBtn');
     const status = document.getElementById('status');
   
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         triggerCreatedInput.checked = data.triggers.created;
         triggerUpdatedInput.checked = data.triggers.updated;
         triggerDeletedInput.checked = data.triggers.deleted;
+        triggerMovedInput.checked = data.triggers.moved;
       }
     });
   
@@ -25,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         created: triggerCreatedInput.checked,
         updated: triggerUpdatedInput.checked,
         deleted: triggerDeletedInput.checked,
+        moved: triggerMovedInput.checked,
       };
       chrome.storage.sync.set({ webhookUrl, triggers }, () => {
         status.textContent = 'Settings saved!';
